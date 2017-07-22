@@ -32,7 +32,7 @@ sed -i \
     -e "s@/yourvirtualenv/bin/python@python@g" \
     -e "s@/ansible_ui_dir/@/srv/ansible_ui/@g" \
     -e "s@user = ansible@;user = ansible@g" \
-    celery-conf/supervisord.conf
+    /srv/ansible_ui/celery-conf/supervisord.conf
 
 cd /srv/ansible_ui/
 
