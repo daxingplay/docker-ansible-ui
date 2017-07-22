@@ -3,6 +3,9 @@ MAINTAINER daxingplay <daxingplay@gmail.com>
 
 ADD start.sh /
 
+# cn mirror
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+
 RUN apk add --no-cache --virtual .build-deps  \
         git \
         py2-pip \
@@ -30,14 +33,16 @@ RUN apk add --no-cache --virtual .build-deps  \
         tk \
         tk-dev \
         xz-dev \
+        libjpeg-turbo-dev \
+        jpeg-dev \
         zlib-dev && \
-    apk add --no-cache ca-certificates zlib libjpeg bash ansible supervisor python2 && \
+    apk add --no-cache ca-certificates bash ansible supervisor python2 && \
     mkdir -p /srv/ansible_ui && \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
     cd /srv/ansible_ui && \
     pip install -r requirements.txt && \
-    pip install Pillow --allow-external Pillow --allow-unverified Pillow && \
+    pip install Pillow && \
     apk del .build-deps
 
 EXPOSE 8000
