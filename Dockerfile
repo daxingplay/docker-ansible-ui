@@ -45,8 +45,9 @@ RUN apk add --no-cache --virtual .build-deps  \
     cd /srv/ansible_ui && \
     pip install -r requirements.txt && \
     pip install Pillow && \
-    apk del .build-deps
+    apk del .build-deps && \
+    chmod +x /start.sh
 
 EXPOSE 8000
 
-ENTRYPOINT ['/bin/bash', '/start.sh']
+ENTRYPOINT ['/start.sh']
