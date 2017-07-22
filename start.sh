@@ -25,7 +25,7 @@ fi
 ANSIBLE_PLAYBOOK=`which ansible-playbook`
 
 if [ ! -z '$ANSIBLE_PLAYBOOK' ]; then
-    sed -i -e "s/ANSIBLE_PLAYBOOK = '/envansible_dir/bin/ansible-playbook'/ANSIBLE_PLAYBOOK = '$ANSIBLE_PLAYBOOK'/g" $SETTINGS_LOCAL
+    sed -i -e "s@ANSIBLE_PLAYBOOK = '/envansible_dir/bin/ansible-playbook'@ANSIBLE_PLAYBOOK = '$ANSIBLE_PLAYBOOK'@g" $SETTINGS_LOCAL
 fi
 
 sed -i \
