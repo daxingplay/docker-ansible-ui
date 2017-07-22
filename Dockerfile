@@ -4,7 +4,9 @@ MAINTAINER daxingplay <daxingplay@gmail.com>
 ADD start.sh /
 
 # cn mirror
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+#RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && 、
+#    mkdir ~/.pip && \
+#    echo "[global]\nindex-url = https://mirrors.ustc.edu.cn/pypi/web/simple\nformat = columns" > ~/.pip/pip.conf
 
 RUN apk add --no-cache --virtual .build-deps  \
         git \
