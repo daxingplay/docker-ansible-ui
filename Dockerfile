@@ -1,7 +1,7 @@
 FROM alpine:3.6
 MAINTAINER daxingplay <daxingplay@gmail.com>
 
-ADD start.sh /
+ADD start.sh /start.sh
 
 # cn mirror
 #RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && 、
