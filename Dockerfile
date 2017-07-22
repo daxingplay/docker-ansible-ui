@@ -4,6 +4,7 @@ MAINTAINER daxingplay <daxingplay@gmail.com>
 ADD start.sh /
 
 RUN apk add --no-cache --virtual .build-deps  \
+        git \
         build-base \
         openldap-dev \
         mariadb-dev \
@@ -28,14 +29,14 @@ RUN apk add --no-cache --virtual .build-deps  \
         tk-dev \
         xz-dev \
         zlib-dev && \
-    apk add --no-cache ca-certificates bash git ansible supervisor python2 && \
+    apk add --no-cache ca-certificates bash ansible supervisor python2 && \
     mkdir -p /srv/ansible_ui && \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
     cd /srv/ansible_ui && \
     pip install -r requirements.txt && \
     pip install PIL --allow-external PIL --allow-unverified PIL && \
-    apk del git .build-deps
+    apk del .build-deps
 
 EXPOSE 8000
 
