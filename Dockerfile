@@ -1,10 +1,10 @@
 FROM alpine:3.6
 MAINTAINER daxingplay <daxingplay@gmail.com>
 
-ADD start.sh /start.sh
+ADD docker /srv/docker
 
 # cn mirror
-#RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && 、
+#RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
 #    mkdir ~/.pip && \
 #    echo "[global]\nindex-url = https://mirrors.ustc.edu.cn/pypi/web/simple\nformat = columns" > ~/.pip/pip.conf
 
@@ -42,11 +42,11 @@ RUN apk add --no-cache --virtual .build-deps  \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
     cd /srv/ansible_ui && \
+    cp -f /srv/docker/requirements.txt .
     pip install -r requirements.txt && \
-    pip install Pillow && \
     apk del .build-deps && \
-    chmod +x /start.sh
+    chmod +x /docker/start.sh
 
 EXPOSE 8000
 
-CMD ["/start.sh"]
+CMD ["/docker/start.sh"]
