@@ -6,6 +6,7 @@ ADD start.sh /
 RUN apk add --no-cache --virtual .build-deps  \
         git \
         py2-pip \
+        python2-dev \
         build-base \
         openldap-dev \
         mariadb-dev \
