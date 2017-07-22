@@ -49,4 +49,4 @@ RUN apk add --no-cache --virtual .build-deps  \
 
 EXPOSE 8000
 
-ENTRYPOINT ['bash', '/start.sh']
+ENTRYPOINT ['/bin/bash', '/start.sh']
