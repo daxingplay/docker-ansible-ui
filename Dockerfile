@@ -3,7 +3,7 @@ MAINTAINER daxingplay <daxingplay@gmail.com>
 
 ADD start.sh /
 
-RUN apk add --no-cache bash git ansible supervisor mariadb-dev build-base libffi && \
+RUN apk add --no-cache bash git ansible supervisor mariadb-dev build-base libffi libffi-dev && \
     mkdir -p /srv/ansible_ui && \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
