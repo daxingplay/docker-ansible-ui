@@ -3,14 +3,14 @@ MAINTAINER daxingplay <daxingplay@gmail.com>
 
 ADD start.sh /
 
-RUN apk add --no-cache bash git ansible supervisor mariadb-dev build-base libffi libffi-dev && \
+RUN apk add --no-cache bash git ansible supervisor mariadb-dev build-base libffi libffi-dev openldap-dev && \
     mkdir -p /srv/ansible_ui && \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
     cd /srv/ansible_ui && \
     pip install -r requirements.txt && \
     pip install PIL --allow-external PIL --allow-unverified PIL && \
-    apk del git build-base
+    apk del git build-base libffi-dev openldap-dev
 
 EXPOSE 8000
 
