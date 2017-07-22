@@ -42,7 +42,7 @@ RUN apk add --no-cache --virtual .build-deps  \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
     cd /srv/ansible_ui && \
-    cp -f /srv/docker/requirements.txt .
+    cp -f /srv/docker/requirements.txt . && \
     pip install -r requirements.txt && \
     apk del .build-deps && \
     chmod +x /docker/start.sh
