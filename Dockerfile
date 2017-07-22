@@ -35,7 +35,7 @@ RUN apk add --no-cache --virtual .build-deps  \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
     cd /srv/ansible_ui && \
     pip install -r requirements.txt && \
-    pip install PIL --allow-external PIL --allow-unverified PIL && \
+    pip install Pillow --allow-external Pillow --allow-unverified Pillow && \
     apk del .build-deps
 
 EXPOSE 8000
