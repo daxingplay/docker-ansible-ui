@@ -45,8 +45,8 @@ RUN apk add --no-cache --virtual .build-deps  \
     cp -f /srv/docker/requirements.txt . && \
     pip install -r requirements.txt && \
     apk del .build-deps && \
-    chmod +x /docker/start.sh
+    chmod +x /srv/docker/start.sh
 
 EXPOSE 8000
 
-CMD ["/docker/start.sh"]
+CMD ["/srv/docker/start.sh"]
