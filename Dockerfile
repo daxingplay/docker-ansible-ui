@@ -37,7 +37,7 @@ RUN apk add --no-cache --virtual .build-deps  \
         libjpeg-turbo-dev \
         jpeg-dev \
         zlib-dev && \
-    apk add --no-cache ca-certificates bash ansible supervisor python2 mariadb-dev && \
+    apk add --no-cache ca-certificates bash ansible supervisor python2 mariadb-dev sshpass && \
     mkdir -p /srv/ansible_ui && \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
