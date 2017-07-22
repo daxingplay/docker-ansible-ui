@@ -31,7 +31,7 @@ RUN apk add --no-cache --virtual .build-deps  \
         tk-dev \
         xz-dev \
         zlib-dev && \
-    apk add --no-cache ca-certificates bash ansible supervisor python2 && \
+    apk add --no-cache ca-certificates zlib libjpeg bash ansible supervisor python2 && \
     mkdir -p /srv/ansible_ui && \
     cd /srv/ && \
     git clone https://github.com/alaxli/ansible_ui.git ansible_ui && \
