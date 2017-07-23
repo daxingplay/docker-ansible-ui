@@ -20,7 +20,7 @@ django-jsonfield==1.0.1
 enum34==1.1.6
 idna==2.5
 ipaddress==1.0.18
-kombu==3.0.37
+kombu==2.5.16
 meld3==1.0.2
 olefile==0.44
 packaging==16.8
